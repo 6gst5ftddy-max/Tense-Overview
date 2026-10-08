@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Englische Zeiten – Interaktiver Zeitstrahl</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #00695c;
+    }
+
+    .timeline {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 60px auto;
+    }
+
+    .line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #b2dfdb;
+      z-index: 1;
+    }
+
+    .point {
+      position: relative;
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      background: #26a69a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      margin: 10px;
+    }
+
+    .point:hover {
+      background: #00796b;
+      transform: scale(1.2);
+    }
+
+    .label {
+      position: absolute;
+      top: 40px;
+      width: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      color: #004d40;
+font-size: 0.8rem;
+    }
+
+    .info {
+      display: none;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 70%;
+      margin: 20px auto;
+      text-align: left;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .info h2 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .signal {
+      font-style: italic;
+      color: #00796b;
+    }
+
+    .examples {
+      margin-top: 10px;
+      padding-left: 15px;
+    }
+
+    .examples li {
+      margin-bottom: 5px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interaktiver Zeitstrahl – Englische Zeiten</h1>
+
+  <div class="timeline">
+    <div class="line"></div>
+
+    
+      <div class="point" onclick="showInfo('pastPerfect')">
+      <div class="label">Past Perfect</div>
+    </div>
+<div class="point" onclick="showInfo('simplePast')">
+      <div class="label">Simple Past</div>
+    </div>
+    <div class="point" onclick="showInfo('pastProgressive')">
+      <div class="label">Past Progressive</div>
+    </div>
+    <div class="point" onclick="showInfo('presentPerfect')">
+      <div class="label">Present Perfect</div>
+    </div>
+    <div class="point" onclick="showInfo('presentPerfectProgressive')">
+      <div class="label">Present Perfect Progressive</div>
+    </div>
+	<div class="point" onclick="showInfo('presentSimple')">
+      <div class="label">Simple Present</div>
+    </div>
+    <div class="point" onclick="showInfo('presentProgressive')">
+      <div class="label">Present Progressive</div>
+    </div>
+      <div class="point" onclick="showInfo('willFuture')">
+      <div class="label">Will-Future</div>
+    </div>
+    <div class="point" onclick="showInfo('goingToFuture')">
+      <div class="label">Going to-Future</div>
+    </div>
+  </div>
+
+  <!-- Past Perfect -->
+  <div id="pastPerfect" class="info">
+    <h2>Past Perfect</h2>
+    <p>👉 Verwendet man für eine <b>Handlung in der Vergangenheit</b> , die <br>
+ <b>vor</b> einer anderen <b> Handlung in der Vergangenheit</b> passiert ist.</p>
+    <p><span class="signal">Signalwörter:</span> after, before, when, already</p>
+    <ul class="examples">
+      <li>When Andy came to the station, his train<b> had left</b>.</li>
+      <li>Amy's train<b> hadn't left</b> when she arrived at the station.</li>
+      <li><b>Had</b> Cally's train<b> left</b> when she arrived at the station?</li>
+    </ul>
+  </div>
+
+ <!-- Past Progressive -->
+  <div id="pastProgressive" class="info">
+    <h2>Past Progressive</h2>
+    <p>&#49;&#65039;&#8419; In der Vergangenheit war eine Handlung<b> bereits im Verlauf</b>, als etwas anderes passierte.</p>
+    <p><span class="signal">Signalwörter:</span> while, when</p>
+    <ul class="examples">
+      <li>Bart<b> was watching</b> TV when Marge came into the room.</li>
+<li>He<b> wasn't reading</b> when she came home.</li>
+<li><b>Was</b> Lisa <b>sleeping</b> when her mom came home?</li>
+<p></p>
+<p> &#50;&#65039;&#8419; um zu <b><u> betonen</u></b>, dass etwas nicht nur stattfand, sondern <b>während des gesamten Zeitraums</b> in der Vergangeheit <b><u>andauerte</b></u>.</p>         
+<li>Bill<b> was washing</b> up from eight to ten.</li>
+   </ul>
+  </div>
+
+<!-- Simple Past -->
+  <div id="simplePast" class="info">
+    <h2>Simple Past</h2>
+    <p>👉 Bezieht sich auf einen<b> bestimmten Zeitpunkt der Vergangenheit.</b></p>
+    <p><span class="signal">Signalwörter:</span> yesterday, last week, in 2010, two days ago</p>
+    <ul class="examples">
+      <li>In 1492, Columbus <b>sailed</b> the ocean blue.</li>
+      <li>He<b> didn’t find</b> India.</li>
+      <li>What continent <b>did</b> he <b>discover</b>?</li>
+    </ul>
+  </div>
+
+  <!-- Present Perfect -->
+  <div id="presentPerfect" class="info">
+    <h2>Present Perfect</h2>
+    <p>&#49;&#65039;&#8419; für eine Handlung in der <b> Vergangenheit bei der wir jetzt das Ergebnis haben</b>.</p>
+    <p><span class="signal">Signalwörter:</span> already, just, yet, ever, since, for</p>
+    <ul class="examples">
+      <li>I<b> have bought</b> a new mobile phone. Look, do you like it?</li>
+      <li>He<b> hasn't found</b> any good headphones yet.</li>
+      <li><b>Have</b> you <b>bought</b> a new mobile?</li>
+<br>
+<p> &#50;&#65039;&#8419; für einen <b> Zeitraum, der in der Vergangenheit begann</b> und bis <b>in die Gegenwart</b> andauert.</p>         
+<li>I<b> haven't visited</b> England yet.</li>
+    </ul>
+  </div>
+
+  <!-- Present Perfect Progressive -->
+  <div id="presentPerfectProgressive" class="info">
+    <h2>Present Perfect Progressive</h2>
+    <p>&#49;&#65039;&#8419; für eine Handlung die <b>in der Vergangenheit begann, die immer noch andauert und vielleicht auch noch in der Zukunft andauert.</b></p>
+    <p><span class="signal">Signalwörter:</span> since, for, all day, the whole morning</p>
+    <ul class="examples">
+      <li>It<b> has been raining</b> for two hours.</li>
+      <li>It<b> hasn't been snowing</b>.</li>
+      <li><b>Have</b> you <b>been working</b> outdoors all day?</li>
+<br>
+<p> &#50;&#65039;&#8419; für Handlungen, die <b>gerade erst vorbei sind,</b> deren <b> <u>unerwartete</u> Folgen</b> man aber immer noch merkt.</p>      
+<li><u>My back is hurting </u> because I<b> have been working</b> in the garden.</li>
+  </ul>
+  </div>
+
+
+
+
+<!-- Simple Present -->
+  <div id="presentSimple" class="info">
+    <h2>Simple Present</h2>
+    <p>👉 verwendet man für etwas <b>Dauerhaftes oder Charakteristisches.</b></p>
+    <p><span class="signal">Signalwörter:</span> always, usually, often, sometimes, never, every day</p>
+    <ul class="examples">
+      <li><b>Cows</b> eat grass.</li>
+      <li><b>They don’t eat</b> meat.</li>
+      <li><b>Do cows eat</b> leaves?</li>
+    </ul>
+  </div>
+
+
+  <!-- Present Progressive -->
+  <div id="presentProgressive" class="info">
+    <h2>Present Progressive</h2>
+    <p>👉 Etwas passiert <b>gerade in diesem Moment</b>.</p>
+    <p><span class="signal">Signalwörter:</span> now, at the moment, today, Look!</p>
+    <ul class="examples">
+      <li>Judith<b> is painting</b> the wall.</li>
+      <li>She<b> isn't painting </b> the floor.</li>
+      <li><b>Is</b> she <b> listing</b> to music?</li>
+    </ul>
+  </div>
+
+
+  <!-- Will-Future -->
+  <div id="willFuture" class="info">
+    <h2>Will-Future</h2>
+    <p>👉 Wird für <b>spontane Entscheidungen</b> oder <b> ungewisse Vorhersagen </b> über die Zukunft verwendet.</p>
+    <p><span class="signal">Signalwörter:</span> tomorrow, next week, in the future, I think</p>
+    <ul class="examples">
+      <li>I<b> will help</b> the elderly woman cross the street.</li>
+      <li>It<b> won't rain</b> tomorrow.</li>
+      <li><b>Will </b> it <b> snow </b> this winter?</li>
+    </ul>
+  </div>
+
+  <!-- Going to-Future -->
+  <div id="goingToFuture" class="info">
+    <h2>Going to-Future</h2>
+    <p> &#49;&#65039;&#8419; Wird für ein <b>bereits länger geplantes Vorhaben</b> verwendet.</p>
+    <p><span class="signal">Signalwörter:</span> tomorrow, next week, soon, in a few days</p>
+    <ul class="examples">
+      <li>I<b> am going to visit</b> my friend next weekend.</li>
+ 	<li>We<b> aren't going to get</b> fastfood next weekend.</li>
+<li><b>Is</b> he <b>going to come</b> with us?</li>
+<br>
+<p> &#50;&#65039;&#8419; Es gibt <b>Anzeigen </b> dafür, dass etwas <b>passieren wird</b>.</p>      
+<li>Have you seen her belly? She<b> is going to become</b> a mum.</li>
+      <li>Look at the dark clouds! It<b> is going to rain</b> soon.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Interaktiver Zeitstrahl zum Zeiten-Handout
+  </footer>
+
+  <script>
+    function showInfo(id) {
+      document.querySelectorAll('.info').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo({ top: document.getElementById(id).offsetTop - 50, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
